@@ -53,6 +53,7 @@ def main(args):
     bme280 = BME280(i2c_dev=bus)
     # 最初の値は捨てる
     get_value(bme280, 2, 1)
+    logging.info("Setup finished. Start reading values...")
 
     while True:
         temperature, pressure, humidity = get_value(bme280, args.average_num, args.interval)
@@ -69,8 +70,6 @@ if __name__ == '__main__':
     )
 
     logging.info(
-        """weather.py - Print readings from the BME280 weather sensor.
-    Press Ctrl+C to exit!
-    """
+        "weather.py - Print readings from the BME280 weather sensor. Press Ctrl+C to exit!"
     )
     main(command())
