@@ -12,7 +12,7 @@ class DisplayText:
         )
         # Initialize display.
         self.disp.begin()
-        self.draw_text("Initializing...", y_pos=30)
+        self.draw_text("Initializing...", font_size=20, y_pos=30)
 
         self.img = None
         self.draw = None

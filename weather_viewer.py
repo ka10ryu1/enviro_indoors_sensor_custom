@@ -19,7 +19,7 @@ def main(args):
     # 最初の値は捨てる
     get_value(bme280, 2, 1)
     logging.info("Setup finished. Start reading values...")
-    display.draw_text("Setup finished.", y_pos=30)
+    display.draw_text("Setup finished.", 20, 30)
 
     try:
         while True:
