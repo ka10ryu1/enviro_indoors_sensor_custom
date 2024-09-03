@@ -16,7 +16,7 @@ class DisplayText:
         self.img = None
         self.draw = None
 
-    def draw_text(self, text, canvas_color=(0, 0, 0)):
+    def draw_text(self, text, font_size=25, canvas_color=(0, 0, 0)):
         # Width and height to calculate text position.
         img_size = (self.disp.width, self.disp.height)
 
@@ -25,7 +25,6 @@ class DisplayText:
         self.draw = ImageDraw.Draw(self.img)
 
         # Text settings.
-        font_size = 25
         font = ImageFont.truetype(UserFont, font_size)
         text_color = (255, 255, 255)
         back_color = (0, 170, 170)
