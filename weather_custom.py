@@ -55,10 +55,7 @@ def main(args):
     while True:
         temperature, pressure, humidity = get_value(bme280, args.average_num, args.interval)
         logging.info(
-            f"""Temperature: {temperature:05.2f} °C
-            Pressure: {pressure:05.2f} hPa
-            Relative humidity: {humidity:05.2f} %
-            """
+            f"Temperature: {temperature:05.2f} °C / Pressure: {pressure:05.2f} hPa / Relative humidity: {humidity:05.2f} %"
         )
 
 
