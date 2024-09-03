@@ -44,7 +44,7 @@ def get_value(bme, cnt: int, interval: int):
         humidity.append(bme.get_humidity())
         time.sleep(interval)
 
-    return mean(temperature), mean(pressure), (humidity)
+    return mean(temperature), mean(pressure), mean(humidity)
 
 
 def main(args):
