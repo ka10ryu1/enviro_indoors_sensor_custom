@@ -42,6 +42,7 @@ class DisplayText:
         # Draw background rectangle and write text.
         self.draw.rectangle((0, 0, 160, 80), back_color)
         self.draw.text((x, y), text, font=font, fill=text_color)
+        self.disp.display(self.img)
         return 0
 
     def display_clear(self):
