@@ -51,6 +51,8 @@ def main(args):
 
     bus = SMBus(1)
     bme280 = BME280(i2c_dev=bus)
+    # 最初の値は捨てる
+    get_value(bme280, args.average_num, args.interval)
 
     while True:
         temperature, pressure, humidity = get_value(bme280, args.average_num, args.interval)
