@@ -19,7 +19,7 @@ def main(args):
     # 最初の値は捨てる
     get_value(bme280, 2, 1)
     logging.info("Setup finished. Start reading values...")
-    display.draw_text("Setup finished.")
+    display.draw_text("Setup finished.", y_pos=30)
 
     try:
         while True:
@@ -27,9 +27,7 @@ def main(args):
             logging.info(
                 f"Temperature: {temperature:5.2f} °C / Pressure: {pressure:7.2f} hPa / Relative humidity: {humidity:5.2f} %"
             )
-            display.draw_text(
-                f"{int(temperature)} °C / {int(pressure)} hPa / {int(humidity)} %", 12
-            )
+            display.draw_text(f"{int(temperature)} °C / {int(humidity)} %\n{int(pressure)} hPa")
 
     except KeyboardInterrupt:
         logging.info("Exit.")
