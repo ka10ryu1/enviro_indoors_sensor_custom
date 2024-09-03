@@ -27,6 +27,7 @@ def main(args):
             logging.info(
                 f"Temperature: {temperature:5.2f} °C / Pressure: {pressure:7.2f} hPa / Relative humidity: {humidity:5.2f} %"
             )
+            display.draw_text(f"{int(temperature)} °C / {int(pressure)} hPa / {int(humidity)} %")
 
     except KeyboardInterrupt:
         logging.info("Exit.")
