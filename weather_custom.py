@@ -30,6 +30,12 @@ def command():
     return parser.parse_args()
 
 
+def device_setup():
+    bus = SMBus(1)
+    bme280 = BME280(i2c_dev=bus)
+    return bme280
+
+
 def mean(a: list):
     return sum(a) / len(a)
 
@@ -49,8 +55,7 @@ def get_value(bme, cnt: int, interval: int):
 
 def main(args):
 
-    bus = SMBus(1)
-    bme280 = BME280(i2c_dev=bus)
+    bme280 = device_setup()
     # 最初の値は捨てる
     get_value(bme280, 2, 1)
     logging.info("Setup finished. Start reading values...")
